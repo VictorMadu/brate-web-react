@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import type { NextPage } from "next";
+import HomeLayout from "../components/home-layout";
 
 const Home: NextPage = () => {
-  return <div>Hello World</div>;
+  return <HomeLayout />;
 };
 
 export default Home;
