@@ -6,9 +6,11 @@ export const container = () =>
       "grid",
       "grid-rows-[1fr_auto]",
       "md:grid-rows-[auto_1fr]",
-      "bg-red-400",
-      "md:bg-blue-400",
-      "h-screen"
+      "min-h-screen",
+      "before:box-border",
+      "after:box-border",
+      "text-neu-800/90",
+      "bg-neu-100"
     )
     .generate([]);
 
