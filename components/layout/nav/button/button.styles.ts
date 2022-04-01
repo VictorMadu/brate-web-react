@@ -10,7 +10,7 @@ export const container = () =>
       "flex-col",
       "items-center",
       "py-2",
-      "py-3",
+      "md:py-4",
       "px-3",
       "text-neu-50/90",
       "text-xs",
