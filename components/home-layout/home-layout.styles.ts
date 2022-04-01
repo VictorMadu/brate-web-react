@@ -15,36 +15,44 @@ export const switchContainer = () =>
   classNames("flex", "justify-end", "shrink-0");
 
 export const settingContainer = () =>
-  classNames("flex", "justify-between", "pt-10", "shrink-0");
+  classNames("flex", "justify-between", "shrink-0");
 
 export const baseContainer = () => classNames("flex", "rounded");
 
-export const base = () =>
-  classNames("bg-neu-400", "px-2", "py-1.5", "rounded-l");
+export const base = () => classNames("bg-neu-400", "px-2", "py-1", "rounded-l");
 
 export const inputContainer = () => classNames("relative", "flex");
 
 export const input = () =>
-  classNames("max-w-[5rem]", "focus:outline-none", "bg-neu-200", "rounded-r");
+  classNames(
+    "max-w-[5rem]",
+    "focus:outline-none",
+    "bg-neu-200",
+    "rounded-r",
+    "px-1.5"
+  );
 
 export const dropdownContainer = (isShow: boolean) =>
+  classNames("top-full", "left-0", "absolute", isShow ? "absolute" : "hidden");
+
+export const dropdownContent = () =>
   classNames(
-    "top-full",
-    "left-0",
     "bg-neu-50 dark:bg-neu-900",
     "max-h-[10rem]",
     "overflow-auto",
-    "rounded",
     "[--shadow:0px_0px_6px_4px_rgba(0,0,0,0.2)] dark:[--shadow:0px_0px_10px_4px_rgba(255,255,255,0.05)] [box-shadow:var(--shadow)]",
-    "absolute",
+    "divide-y",
+    "divide-neu-400/30",
     "cursor-pointer",
-    isShow ? "absolute" : "hidden"
+    "rounded",
+    "divide-y",
+    "divide-ney-400/30"
   );
 
 export const dropItem = (isActive: boolean) =>
   classNames(
     "px-5",
-    "py-2",
+    "py-1.5",
     "flex",
     "gap-x-2",
     "w-full",
@@ -56,7 +64,57 @@ export const dropItem = (isActive: boolean) =>
   );
 
 export const filterContainer = () =>
-  classNames("flex", "gap-x-3", "items-end", "font-bold");
+  classNames(
+    "relative",
+    "px-2.5",
+    "py-1",
+    "border",
+    "border-neu-400/60",
+    "rounded"
+  );
+
+export const filterContent = () =>
+  classNames("flex", "gap-x-2", "items-center");
+
+export const filterIcon = () => classNames("text-neu-700/70");
+
+export const filterDropdownContainer = () =>
+  classNames("absolute", "right-0", "top-full");
+
+export const filterDropdownContent = () =>
+  classNames(
+    "flex",
+    "flex-col",
+    "border",
+    "border-neu-400/60",
+    "rounded",
+    "shadow-[0px_0px_6px_4px_rgba(0,0,0,0.15)]",
+    "bg-neu-50",
+    "divide-y",
+    "divide-neu-400/30"
+  );
+
+export const filterDropdownItem = () =>
+  classNames("pl-2", "pr-6", "py-1", "relative");
+
+export const filterDropdownDropdownContainer = () =>
+  classNames("absolute", "top-full", "right-full", "-mt-1", "-mr-2", "z-20");
+
+export const filterDropdownDropdownContent = () =>
+  classNames(
+    "border",
+    "border-neu-400/60",
+    "rounded",
+    "shadow-[0px_0px_6px_4px_rgba(0,0,0,0.15)]",
+    "bg-neu-50",
+    "divide-y",
+    "divide-neu-400/30"
+  );
+
+export const filterDropdownDropItem = () => classNames("pl-2", "pr-6", "py-1");
+
+// export const filterContainer = () =>
+//   classNames("flex", "gap-x-3", "items-end", "font-bold");
 
 export const filterLeft = () => classNames("flex");
 

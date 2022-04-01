@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import Switch from "../../core/switch";
+import React, { useEffect, useState } from "react";
 import Layout from "../layout";
-import * as styles from "./home-layout.styles";
-import { text } from "../../language/en";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { text } from "../../language/en/app";
 import map from "lodash/map";
 import range from "lodash/range";
+import * as styles from "./home-layout.styles";
 
 const HomeLayout = () => {
   const [switchIsOn, setSwitchIsOn] = useState(true);
@@ -18,16 +19,6 @@ const HomeLayout = () => {
   return (
     <Layout showNav={true}>
       <div className={styles.container()}>
-        <div className={styles.switchContainer()}>
-          <Switch
-            onText={text.market_type.parallel}
-            offText={text.market_type.black}
-            onClick={(isOn) => {
-              setSwitchIsOn(isOn);
-            }}
-            isOn={switchIsOn}
-          />
-        </div>
         <div className={styles.settingContainer()}>
           <div className={styles.baseContainer()}>
             <span className={styles.base()}>{text.base}</span>
@@ -40,7 +31,7 @@ const HomeLayout = () => {
                 disabled={false}
               />
               <div className={styles.dropdownContainer(true)}>
-                <ul>
+                <ul className={styles.dropdownContent()}>
                   {map(range(0, 20), (id) => (
                     <li key={id} className={styles.dropItem(false)}>
                       {"NGN"}
@@ -51,10 +42,46 @@ const HomeLayout = () => {
             </div>
           </div>
 
-          <ul className={styles.filterContainer()}>
-            <li className={styles.filterLeft()}>All</li>
-            <li className={styles.filterRight()}>Favourite</li>
-          </ul>
+          <div className={styles.filterContainer()}>
+            <div className={styles.filterContent()}>
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                size="xs"
+                className={styles.filterIcon()}
+              />
+              <span>{text.filter}</span>
+            </div>
+            <div className={styles.filterDropdownContainer()}>
+              <ul className={styles.filterDropdownContent()}>
+                <li className={styles.filterDropdownItem()}>
+                  <p>{text.base}</p>
+                  <div className={styles.filterDropdownDropdownContainer()}>
+                    <ul className={styles.filterDropdownDropdownContent()}>
+                      <li className={styles.filterDropdownDropItem()}>
+                        {text.market_type.parallel}
+                      </li>
+                      <li className={styles.filterDropdownDropItem()}>
+                        {text.market_type.black}
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li className={styles.filterDropdownItem()}>
+                  <p>{text.filter}</p>
+                  <div className={styles.filterDropdownDropdownContainer()}>
+                    <ul className={styles.filterDropdownDropdownContent()}>
+                      <li className={styles.filterDropdownDropItem()}>
+                        {text.type_type.all}
+                      </li>
+                      <li className={styles.filterDropdownDropItem()}>
+                        {text.type_type.favourite}
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className={styles.paginationContainer()}>
@@ -70,7 +97,7 @@ const HomeLayout = () => {
               <th className={styles.pricesTableHeadCol4()}></th>
             </thead>
             <tbody className={styles.pricesTableBody()}>
-              {map(range(0, 10), (id) => (
+              {map(range(0, 30), (id) => (
                 <tr key={id} className={styles.pricesTableBodyRow()}>
                   <td className={styles.pricesTableBodyCol1()}>USD/NGN</td>
                   <td className={styles.pricesTableBodyCol2()}>450.345939</td>
