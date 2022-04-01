@@ -7,12 +7,12 @@ import {
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "./button";
-import { text } from "../../../language/en/app";
+import app from "../../../language/en/app";
 
 const Nav = () => {
   return (
     <div className={styles.container()}>
-      <div className={styles.tilte()}>{text.title}</div>
+      <div className={styles.tilte()}>{app.title}</div>
       <div className={styles.navContainer()}>
         <Button text="Home" Icon={faHome} route="/" />
         <Button text="Alerts" Icon={faMoneyCheck} route="/" />

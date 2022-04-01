@@ -1,4 +1,4 @@
-export const text = {
+export const app = {
   title: "Brate",
   base: "Base",
   filter: "Filter",
@@ -12,4 +12,15 @@ export const text = {
     all: "All",
     favourite: "Favourite",
   },
+  settings: {
+    list: {
+      account: "Account",
+      notification: "Notification",
+      display: "Display",
+      language: "Language",
+      logout: "Logout",
+    },
+  },
 };
+
+export default app;

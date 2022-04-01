@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Switch from "../../core/switch";
 import Layout from "../layout";
 import * as styles from "./alerts-layout.styles";
-import { text } from "../../language/en/app";
+import app from "../../language/en/app";
 import map from "lodash/map";
 import range from "lodash/range";
 
@@ -20,8 +20,8 @@ const AlertsLayout = () => {
       <div className={styles.container()}>
         <div className={styles.switchContainer()}>
           <Switch
-            onText={text.market_type.parallel}
-            offText={text.market_type.black}
+            onText={app.market_type.parallel}
+            offText={app.market_type.black}
             onClick={(isOn) => {
               setSwitchIsOn(isOn);
             }}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../layout";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { text } from "../../language/en/app";
+import app from "../../language/en/app";
 import map from "lodash/map";
 import range from "lodash/range";
 import * as styles from "./home-layout.styles";
@@ -21,7 +21,7 @@ const HomeLayout = () => {
       <div className={styles.container()}>
         <div className={styles.settingContainer()}>
           <div className={styles.baseContainer()}>
-            <span className={styles.base()}>{text.base}</span>
+            <span className={styles.base()}>{app.base}</span>
             <div className={styles.inputContainer()}>
               <input
                 className={styles.input()}
@@ -49,32 +49,32 @@ const HomeLayout = () => {
                 size="xs"
                 className={styles.filterIcon()}
               />
-              <span>{text.filter}</span>
+              <span>{app.filter}</span>
             </div>
             <div className={styles.filterDropdownContainer()}>
               <ul className={styles.filterDropdownContent()}>
                 <li className={styles.filterDropdownItem()}>
-                  <p>{text.base}</p>
+                  <p>{app.base}</p>
                   <div className={styles.filterDropdownDropdownContainer()}>
                     <ul className={styles.filterDropdownDropdownContent()}>
                       <li className={styles.filterDropdownDropItem()}>
-                        {text.market_type.parallel}
+                        {app.market_type.parallel}
                       </li>
                       <li className={styles.filterDropdownDropItem()}>
-                        {text.market_type.black}
+                        {app.market_type.black}
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li className={styles.filterDropdownItem()}>
-                  <p>{text.filter}</p>
+                  <p>{app.filter}</p>
                   <div className={styles.filterDropdownDropdownContainer()}>
                     <ul className={styles.filterDropdownDropdownContent()}>
                       <li className={styles.filterDropdownDropItem()}>
-                        {text.type_type.all}
+                        {app.type_type.all}
                       </li>
                       <li className={styles.filterDropdownDropItem()}>
-                        {text.type_type.favourite}
+                        {app.type_type.favourite}
                       </li>
                     </ul>
                   </div>
