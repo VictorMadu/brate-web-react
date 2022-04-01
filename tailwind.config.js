@@ -22,6 +22,7 @@ module.exports = {
         "pri-700": "#01497c",
         "pri-800": "#013a63",
         "pri-900": "#012a4a",
+        warn: colors.red,
       },
     },
   },
