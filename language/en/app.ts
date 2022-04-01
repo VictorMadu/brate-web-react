@@ -26,6 +26,19 @@ export const app = {
       phone: "Phone Number",
       email: "Email",
     },
+    notification: {
+      set_removal_text: "Remove notification after",
+      time: "Time",
+      removal_time: {
+        one_hr: "1 hour",
+        three_hr: "3 hours",
+        six_hr: "6 hours",
+        one_day: "1 day",
+        three_day: "3 days",
+        one_wk: "1 week",
+        one_mth: "1 month",
+      },
+    },
   },
 };
 

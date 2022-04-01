@@ -21,4 +21,5 @@ export const settingsText = () => classNames();
 
 export const settingsIcon = () => classNames();
 
-export const logoutBtn = () => classNames("text-warn-500/90", "mt-4");
+export const logoutBtn = () =>
+  classNames("text-warn-500/90", "mt-4", "font-semibold");
