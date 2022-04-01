@@ -7,7 +7,7 @@ export const container = () =>
     "h-screen",
     "before:box-border",
     "after:box-border",
-    "text-neu-800/90",
+    "text-neu-700/90",
     "bg-neu-100"
   );
 
