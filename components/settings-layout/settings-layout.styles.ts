@@ -12,10 +12,10 @@ export const container = () =>
   );
 
 export const settingsList = () =>
-  classNames("mx-auto", "w-[20rem]", "divide-y", "divide-neu-400/30");
+  classNames("mt-12", "mx-auto", "w-full", "divide-y", "divide-neu-400/30");
 
 export const settingsItem = () =>
-  classNames("flex", "justify-between", "items-center", "px-1", "py-2");
+  classNames("flex", "justify-between", "items-center", "px-1", "py-2.5");
 
 export const settingsText = () => classNames();
 
