@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import type { NextPage } from "next";
-import HomeLayout from "../components/home-layout";
+import NotificationsLayout from "../components/notification-layout";
 
 const Notification: NextPage = () => {
-  return <div>Notification Page</div>;
+  return <NotificationsLayout />;
 };
 
 export default Notification;
