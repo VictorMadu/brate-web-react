@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import Switch from "../../core/switch";
+import React from "react";
 import Layout from "../layout";
-import * as styles from "./notification-layout.styles";
-import { text } from "../../language/en";
 import map from "lodash/map";
 import range from "lodash/range";
+import * as styles from "./notification-layout.styles";
 
 const NotificationsLayout = () => {
   return (
