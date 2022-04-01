@@ -1,21 +1,22 @@
-import { ClassNameGenerator as CNG } from "../../utils";
+import classNames from "classnames";
 
 export const container = () =>
-  new CNG()
-    .values(
-      "grid",
-      "grid-rows-[1fr_auto]",
-      "md:grid-rows-[auto_1fr]",
-      "h-screen",
-      "before:box-border",
-      "after:box-border",
-      "text-neu-800/90",
-      "bg-neu-100"
-    )
-    .generate([]);
+  classNames(
+    "flex",
+    "flex-col md:flex-row",
+    "h-screen",
+    "before:box-border",
+    "after:box-border",
+    "text-neu-800/90",
+    "bg-neu-100"
+  );
 
-export const navContainer = () =>
-  new CNG().values("row-[2/-1] md:row-[1/2]").generate([]);
+export const navContainer = () => classNames("order-2 md:order-1", "shrink-0");
 
 export const childrenContainer = () =>
-  new CNG().values("row-[1/2] md:row-[2/-1]", "overflow-auto").generate([]);
+  classNames(
+    "row-[1/2] md:row-[1/-1]",
+    "overflow-auto",
+    "order-1 md:order-2",
+    "grow"
+  );
