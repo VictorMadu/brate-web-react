@@ -1,22 +1,22 @@
-import { ClassNameGenerator as CNG } from "../../../../utils";
+import classNames from "classnames";
 
 export const container = () =>
-  new CNG()
-    .values(
-      "after:content-[attr(data-text)]",
-      "after:block",
-      "after:md:uppercase",
-      "flex",
-      "flex-col",
-      "items-center",
-      "py-2",
-      "md:py-4",
-      "px-3",
-      "text-neu-50/90",
-      "text-xs",
-      "tracking-wide",
-      "md:tracking-wider"
-    )
-    .generate([]);
+  classNames(
+    "flex",
+    "flex-col md:flex-row",
+    "items-center",
+    "gap-x-3",
+    "py-2",
+    "md:py-4",
+    "px-3",
 
-export const icon = () => new CNG().values("text-xl", "md:hidden").generate([]);
+    "text-xs md:text-sm",
+    "tracking-wide",
+    "md:tracking-normal",
+    "md:font-bold"
+  );
+
+export const text = () => classNames("text-neu-50/60 md:text-neu-50/90");
+
+export const icon = () =>
+  classNames("text-neu-50/90 md:text-neu-50/60", "text-base");

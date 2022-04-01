@@ -5,8 +5,9 @@ import * as styles from "./button.styles";
 
 const Button = (props: IProps) => {
   return (
-    <button data-text={props.text} className={styles.container()}>
+    <button className={styles.container()}>
       <FontAwesomeIcon icon={props.Icon} size="1x" className={styles.icon()} />
+      <p className={styles.text()}>{props.text}</p>
     </button>
   );
 };
