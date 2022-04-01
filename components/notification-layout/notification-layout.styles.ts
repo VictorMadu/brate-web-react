@@ -22,7 +22,7 @@ export const notificationList = () =>
     "overflow-auto"
   );
 
-export const notification = () => classNames("px-4", "py-3");
+export const notification = () => classNames("px-4", "py-4", "space-y-1");
 
 export const notificationText = () => classNames();
 
