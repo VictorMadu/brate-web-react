@@ -14,11 +14,17 @@ export const app = {
   },
   settings: {
     list: {
-      account: "Account",
+      profile: "Profile",
       notification: "Notification",
       display: "Display",
       language: "Language",
       logout: "Logout",
+    },
+    profile: {
+      name: "Name",
+      change_pwd: "Change Password",
+      phone: "Phone Number",
+      email: "Email",
     },
   },
 };
