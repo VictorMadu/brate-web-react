@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Switch from "../../core/switch";
 import Layout from "../layout";
 import * as styles from "./alerts-layout.styles";
-import { text } from "../../language/en";
+import { text } from "../../language/en/app";
 import map from "lodash/map";
 import range from "lodash/range";
 

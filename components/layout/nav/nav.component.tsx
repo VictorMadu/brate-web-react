@@ -7,7 +7,7 @@ import {
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "./button";
-import { text } from "../../../language/en";
+import { text } from "../../../language/en/app";
 
 const Nav = () => {
   return (
