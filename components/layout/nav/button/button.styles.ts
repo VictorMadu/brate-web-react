@@ -9,7 +9,7 @@ export const container = () =>
     "py-2",
     "md:py-4",
     "px-3",
-
+    "flex-1",
     "text-xs md:text-sm",
     "tracking-wide",
     "md:tracking-normal",

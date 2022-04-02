@@ -15,6 +15,7 @@ export const app = {
   settings: {
     list: {
       profile: "Profile",
+      wallet: "Wallet",
       notification: "Notification",
       display: "Display",
       language: "Language",
@@ -38,6 +39,9 @@ export const app = {
         one_wk: "1 week",
         one_mth: "1 month",
       },
+    },
+    display: {
+      dark_mode: "Dark Mode",
     },
   },
 };

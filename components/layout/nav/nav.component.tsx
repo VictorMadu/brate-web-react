@@ -16,6 +16,7 @@ const Nav = () => {
       <div className={styles.navContainer()}>
         <Button text="Home" Icon={faHome} route="/" />
         <Button text="Alerts" Icon={faMoneyCheck} route="/" />
+        <Button text="Trade" Icon={faMoneyCheck} route="/" />
         <Button text="Notifications" Icon={faComment} route="/" />
         <Button text="Settings" Icon={faDesktop} route="/" />
       </div>

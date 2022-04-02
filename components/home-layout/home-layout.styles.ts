@@ -113,13 +113,6 @@ export const filterDropdownDropdownContent = () =>
 
 export const filterDropdownDropItem = () => classNames("pl-2", "pr-6", "py-1");
 
-// export const filterContainer = () =>
-//   classNames("flex", "gap-x-3", "items-end", "font-bold");
-
-export const filterLeft = () => classNames("flex");
-
-export const filterRight = () => classNames("flex");
-
 export const paginationContainer = () =>
   classNames("mt-8", "text-right", "shrink-0", "overflow-auto");
 

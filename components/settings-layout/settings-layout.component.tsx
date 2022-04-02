@@ -19,6 +19,14 @@ const Settings = () => {
             />
           </li>
           <li className={styles.settingsItem()}>
+            <p className={styles.settingsText()}>{app.settings.list.wallet}</p>
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              size="xs"
+              className={styles.settingsIcon()}
+            />
+          </li>
+          <li className={styles.settingsItem()}>
             <p className={styles.settingsText()}>
               {app.settings.list.notification}
             </p>
