@@ -117,7 +117,7 @@ export const filterDropdownDropdownContent = () =>
     "divide-neu-400/30"
   );
 
-export const filterDropdownDropItem = () => classNames("pl-2", "pr-6", "py-1");
+export const filterDropdownDropItem = () => classNames("pl-2", "py-1", "px-6");
 
 export const paginationContainer = () =>
   classNames("mt-8", "text-right", "shrink-0", "overflow-auto");
@@ -138,7 +138,7 @@ export const row = () => classNames("flex");
 export const col1 = () => classNames("basis-6/12 md:basis-5/12");
 export const col2 = () => classNames("basis-4/12 md:basis-3/12");
 export const col3 = () => classNames("basis-3/12", "hidden md:block");
-export const col4 = () => classNames("basis-2/12");
+export const col4 = () => classNames("basis-0");
 
 export const pricesTableHeadRow = () =>
   classNames(
@@ -153,7 +153,7 @@ export const pricesTableHeadRow = () =>
   );
 
 export const pricesTableHeadCol = () =>
-  classNames("font-normal", "px-3", "py-2", "pr-6");
+  classNames("font-normal", "px-3", "py-2");
 
 export const pricesTableHeadCol1 = () =>
   classNames(pricesTableHeadCol(), col1());
