@@ -1,13 +1,11 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShield } from "@fortawesome/free-solid-svg-icons";
 import app from "../../language/en/app";
 import Layout from "../layout";
-import * as styles from "./account-settings-layout.styles";
+import * as styles from "./profile-settings-layout.styles";
 
 const appLang = app.settings.profile;
 
-const AccountSettingsLayout = () => {
+const ProfileSettingsLayout = () => {
   return (
     <Layout showNav={true}>
       <div className={styles.container()}>
@@ -36,4 +34,4 @@ const AccountSettingsLayout = () => {
   );
 };
 
-export default AccountSettingsLayout;
+export default ProfileSettingsLayout;
