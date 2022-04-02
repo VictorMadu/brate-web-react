@@ -5,7 +5,7 @@ export const container = () =>
     .values(
       "flex",
       "md:flex-col",
-      "bg-blue-600",
+      "bg-pri-600",
       "items-center md:items-start",
       "md:h-full",
       "divide-y",
