@@ -44,6 +44,15 @@ export const app = {
       dark_mode: "Dark Mode",
     },
   },
+  trade: {
+    trade: "trade",
+    buy: "Buy",
+    sell: "Sell",
+    wallet: "Wallet",
+    trigger_at: "Trigger At",
+    copy: "Copy",
+    set: "Set",
+  },
 };
 
 export default app;
