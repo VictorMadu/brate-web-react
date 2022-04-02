@@ -88,25 +88,23 @@ const HomeLayout = () => {
           <span>1</span> - <span>10</span> of <span>100</span>
         </div>
 
-        <div className={styles.pricesTableContainer()}>
-          <table className={styles.pricesTable()}>
-            <thead className={styles.pricesTableHeadRow()}>
-              <th className={styles.pricesTableHeadCol1()}>Currency Pair</th>
-              <th className={styles.pricesTableHeadCol2()}>Price</th>
-              <th className={styles.pricesTableHeadCol3()}>24H Change (%)</th>
-              <th className={styles.pricesTableHeadCol4()}></th>
-            </thead>
-            <tbody className={styles.pricesTableBody()}>
-              {map(range(0, 30), (id) => (
-                <tr key={id} className={styles.pricesTableBodyRow()}>
-                  <td className={styles.pricesTableBodyCol1()}>USD/NGN</td>
-                  <td className={styles.pricesTableBodyCol2()}>450.345939</td>
-                  <td className={styles.pricesTableBodyCol3()}>-1.38</td>
-                  <td className={styles.pricesTableBodyCol4()}>Star</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className={styles.pricesTable()}>
+          <div className={styles.pricesTableHeadRow()}>
+            <div className={styles.pricesTableHeadCol1()}>Currency Pair</div>
+            <div className={styles.pricesTableHeadCol2()}>Price</div>
+            <div className={styles.pricesTableHeadCol3()}>24H Change (%)</div>
+            <div className={styles.pricesTableHeadCol4()}></div>
+          </div>
+          {map(range(0, 30), (id) => (
+            <div key={id} className={styles.pricesTableBodyRow()}>
+              <div className={styles.pricesTableBodyCol1()}>
+                {"USD/NGN" + id}
+              </div>
+              <div className={styles.pricesTableBodyCol2()}>450.345939</div>
+              <div className={styles.pricesTableBodyCol3()}>-1.38</div>
+              <div className={styles.pricesTableBodyCol4()}>Star</div>
+            </div>
+          ))}
         </div>
       </div>
     </Layout>
