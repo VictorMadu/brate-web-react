@@ -65,51 +65,63 @@ export const filterRight = () => classNames("flex");
 export const paginationContainer = () =>
   classNames("mt-8", "text-right", "shrink-0", "overflow-auto");
 
-export const pricesTableContainer = () =>
-  classNames("overflow-auto", "h-0", "grow", "rounded-md");
-
 export const pricesTable = () =>
   classNames(
     "w-full",
     "shadow-[0px_0px_6px_rgba(0,0,0,0.4)]",
     "mt-4",
-    "overflow-hidden",
-    "rounded-md"
+    "rounded-md",
+    "overflow-auto"
   );
+
+export const row = () => classNames("flex", "items-center", "py-2");
+export const col1 = () => classNames("basis-4/12", "space-y-1");
+export const col2 = () => classNames("basis-6/12", "space-y-1");
+export const col3 = () => classNames("basis-2", "grow");
 
 export const pricesTableHeadRow = () =>
   classNames(
+    row(),
     "tracking-wide",
     "bg-pri-500",
     "uppercase",
     "text-sm",
-    "text-neu-50"
+    "text-neu-50",
+    "sticky",
+    "top-0"
   );
 
-export const pricesTableHeadCol = () =>
-  classNames("font-normal", "px-3", "py-2");
+export const pricesTableHeadCol = () => classNames("font-bold", "px-3", "py-2");
 
 export const pricesTableHeadCol1 = () =>
-  classNames(pricesTableHeadCol(), "w-5/12");
+  classNames(pricesTableHeadCol(), col1());
 export const pricesTableHeadCol2 = () =>
-  classNames(pricesTableHeadCol(), "w-3/12");
+  classNames(pricesTableHeadCol(), col2());
 export const pricesTableHeadCol3 = () =>
-  classNames(pricesTableHeadCol(), "w-3/12");
-export const pricesTableHeadCol4 = () =>
-  classNames(pricesTableHeadCol(), "w-1/12");
-
-export const pricesTableBody = () => classNames();
+  classNames(pricesTableHeadCol(), col3());
 
 export const pricesTableBodyRow = () =>
-  classNames("even:bg-neu-200", "hover:bg-neu-300");
+  classNames(row(), "even:bg-neu-200", "hover:bg-neu-300");
 
 export const pricesTableBodyCol = () => classNames("px-3", "py-3");
 
 export const pricesTableBodyCol1 = () =>
-  classNames(pricesTableBodyCol(), "w-5/12");
+  classNames(pricesTableBodyCol(), col1());
 export const pricesTableBodyCol2 = () =>
-  classNames(pricesTableBodyCol(), "w-3/12", "text-right");
+  classNames(pricesTableBodyCol(), col2());
 export const pricesTableBodyCol3 = () =>
-  classNames(pricesTableBodyCol(), "w-3/12", "text-right");
-export const pricesTableBodyCol4 = () =>
-  classNames(pricesTableBodyCol(), "w-1/12");
+  classNames(pricesTableBodyCol(), col3());
+
+export const currencyPair = () => classNames("font-bold");
+
+export const delBtn = () =>
+  classNames(
+    "transition-all",
+    "font-semibold",
+    "bg-neu-300 hover:bg-warn-100/50 focus:bg-warn-100/50",
+    "hover:text-warn-500 focus:text-warn-500",
+    "py-1",
+    "px-1.5",
+    "rounded",
+    "cursor-pointer"
+  );
