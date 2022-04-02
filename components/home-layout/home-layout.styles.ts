@@ -128,15 +128,12 @@ export const pricesTable = () =>
     "shadow-[0px_0px_6px_rgba(0,0,0,0.4)]",
     "mt-4",
     "rounded-md",
-    "overflow-auto",
-    "flex",
-    "flex-col",
-    "relative"
+    "overflow-auto"
   );
 
 export const row = () => classNames("flex");
-export const col1 = () => classNames("basis-6/12 md:basis-5/12");
-export const col2 = () => classNames("basis-4/12 md:basis-3/12");
+export const col1 = () => classNames("basis-5/12 md:basis-4/12");
+export const col2 = () => classNames("basis-5/12 md:basis-4/12");
 export const col3 = () => classNames("basis-3/12", "hidden md:block");
 export const col4 = () => classNames("basis-0");
 
@@ -160,20 +157,20 @@ export const pricesTableHeadCol1 = () =>
 export const pricesTableHeadCol2 = () =>
   classNames(pricesTableHeadCol(), col2(), "text-right");
 export const pricesTableHeadCol3 = () =>
-  classNames(pricesTableHeadCol(), col3(), "text-right");
+  classNames(pricesTableHeadCol(), col3(), "text-center");
 export const pricesTableHeadCol4 = () =>
   classNames(pricesTableHeadCol(), col4(), "text-right");
 
 export const pricesTableBodyRow = () =>
-  classNames(row(), "even:bg-neu-200", "hover:bg-neu-300");
+  classNames(row(), "even:bg-neu-200", "hover:bg-neu-300", "cursor-pointer");
 
-export const pricesTableBodyCol = () => classNames("px-3", "py-3");
+export const pricesTableBodyCol = () => classNames("px-3", "py-4");
 
 export const pricesTableBodyCol1 = () =>
-  classNames(pricesTableBodyCol(), col1(), "w-5/12");
+  classNames(pricesTableBodyCol(), col1());
 export const pricesTableBodyCol2 = () =>
-  classNames(pricesTableBodyCol(), col2(), "w-3/12", "text-right");
+  classNames(pricesTableBodyCol(), col2(), "text-right");
 export const pricesTableBodyCol3 = () =>
-  classNames(pricesTableBodyCol(), col3(), "w-3/12", "text-right");
+  classNames(pricesTableBodyCol(), col3(), "text-center");
 export const pricesTableBodyCol4 = () =>
-  classNames(pricesTableBodyCol(), col4(), "w-1/12");
+  classNames(pricesTableBodyCol(), col4());
