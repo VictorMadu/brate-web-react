@@ -27,8 +27,13 @@ export const item = () =>
     "cursor-pointer"
   );
 
+export const titleContainer = () => classNames("basis-40", "flex");
+
+export const textContainer = () =>
+  classNames("grow", "flex", "items-center", "space-x-2");
+
 export const title = () =>
-  classNames("font-bold", "px-1", "w-full", "basis-40");
+  classNames("font-bold", "px-1", "grow", "inline-block");
 
 export const textBase = () =>
   classNames("bg-neu-50", "py-2", "px-2", "grow", "rounded-lg");
@@ -36,3 +41,15 @@ export const textBase = () =>
 export const text = () => classNames(textBase());
 
 export const textAndBold = () => classNames(text(), "font-extrabold");
+
+export const editBtn = (isOfLabel: boolean) =>
+  classNames(
+    "shrink-0",
+    "w-8",
+    "h-8",
+    "rounded",
+    "text-neu-500/90",
+    "hover:bg-pri-200/60 focus:bg-pri-200/60",
+    "hover:text-pri-500/90 focus:text-pri-500/90",
+    isOfLabel ? "md:hidden" : "hidden md:inline-block"
+  );
