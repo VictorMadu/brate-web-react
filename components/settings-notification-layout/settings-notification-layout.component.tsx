@@ -14,14 +14,14 @@ const SettingsNotificationLayout = () => {
         <div className={styles.option()}>
           <p>{app.settings.notification.set_removal_text}</p>
           <div className={styles.timeContainer()}>
-            <div className={styles.timeContent()}>
+            <button className={styles.timeContentBtn()}>
               <FontAwesomeIcon
                 icon={faChevronDown}
                 size="xs"
                 className={styles.timeIcon()}
               />
               <span>{app.settings.notification.time}</span>
-            </div>
+            </button>
             <div className={styles.timeDropdownContainer()}>
               <ul className={styles.timeDropdownContent()}>
                 <li className={styles.timeDropdownItem()}>{appLng.one_hr}</li>

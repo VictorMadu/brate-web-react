@@ -15,26 +15,35 @@ export const option = () =>
   classNames(
     "flex",
     "justify-between",
-    "items-end",
-    "border-b",
+    "items-center",
+    "border",
     "border-neu-400/30",
-    "pb-2"
+    "rounded-md",
+    "px-3",
+    "py-4"
   );
 
-export const timeContainer = () =>
+export const timeContainer = () => classNames("relative", "group");
+
+export const timeContentBtn = () =>
   classNames(
-    "relative",
-    "inline-block",
+    "flex",
+    "gap-x-2",
+    "items-center",
+    "group-hover:bg-pri-200/60 group-focus:bg-pri-200/60",
+    "group-hover:text-pri-500/90 group-focus:text-pri-500/90",
     "px-2.5",
     "py-1",
     "border",
     "border-neu-400/60",
-    "rounded"
+    "rounded",
+    "text-neu-500/90"
   );
 
-export const timeContent = () => classNames("flex", "gap-x-2", "items-center");
-
-export const timeIcon = () => classNames("text-neu-700/70");
+export const timeIcon = () =>
+  classNames(
+    "text-neu-700 group-hover:text-pri-500/90 group-focus:text-pri-500/90"
+  );
 
 export const timeDropdownContainer = () =>
   classNames("absolute", "right-0", "top-full", "w-[max-content]");
