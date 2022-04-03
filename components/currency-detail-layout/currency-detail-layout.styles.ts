@@ -60,7 +60,9 @@ export const btn = () =>
     "py-1",
     "transition-all",
     "hover:text-pri-600 focus:text-pri-600",
-    "text-lg"
+    "hover:bg-pri-200/60 focus:bg-pri-200/60",
+    "uppercase",
+    "text-sm"
   );
 
 export const currencyContainer = () =>
@@ -83,10 +85,10 @@ export const currencyAbbrevLabel = () =>
   classNames(
     "rounded-l",
     "bg-pri-200",
-    "px-1.5",
+    "px-3",
     "py-2",
-    "text-lg",
-    "font-bold"
+    "inline-block",
+    "font-semibold"
   );
 
 export const currencyInput = () =>
@@ -118,11 +120,12 @@ export const icon = () => classNames();
 
 export const actionBtn = () =>
   classNames(
-    "bg-pri-500",
+    "bg-pri-100/60 hover:bg-pri-200/60 focus:bg-pri-200/60",
+    "transition-colors",
     "px-5",
     "py-1.5",
     "font-bold",
-    "text-neu-50",
+    "text-pri-500",
     "rounded"
   );
 

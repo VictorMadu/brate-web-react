@@ -11,6 +11,8 @@ import {
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
 
+const text = app.currency;
+
 const CurrencyDetailLayout = () => {
   const [switchIsOn, setSwitchIsOn] = useState(true);
   return (
@@ -40,9 +42,9 @@ const CurrencyDetailLayout = () => {
           </p>
         </div>
         <div className={styles.btnGroup()}>
-          <button className={styles.btn()}>Convert</button>
-          <button className={styles.btn()}>Set Alert</button>
-          <button className={styles.btn()}>Trade</button>
+          <button className={styles.btn()}>{text.convert}</button>
+          <button className={styles.btn()}>{text.set_alert}</button>
+          <button className={styles.btn()}>{text.buy}</button>
         </div>
         <div className={styles.currencyContainer()}>
           <div className={styles.currencyContent()}>

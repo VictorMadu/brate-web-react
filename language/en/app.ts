@@ -54,6 +54,12 @@ export const app = {
     set: "Set",
     action: "Action",
   },
+
+  currency: {
+    convert: "Convert",
+    set_alert: "Set Alert",
+    buy: "Buy",
+  },
 };
 
 export default app;
