@@ -39,21 +39,25 @@ const TradeLayout = () => {
         <div className={styles.body()}>
           <div className={styles.exchangersContainer()}>
             <div className={styles.exchangerHeader()}>
-              <div className={styles.name()}>Name</div>
-              <div className={styles.moneyContainer()}>
-                <div className={styles.rate()}>Rate</div>
-                <div className={styles.available()}>Available</div>
+              <div className={styles.nameAndRateContainerHead()}>
+                <div className={styles.nameHead()}>Name</div>
+                <div className={styles.rateHead()}>Rate</div>
               </div>
-              <button className={""}>{trade.buy}</button>
+
+              <div className={styles.availableHead()}>Available</div>
+              <div className={styles.buyBtnHead()}>{trade.action}</div>
             </div>
+
             {map(range(0, 30), (id) => (
               <div className={styles.exchangerContent()}>
-                <div className={styles.name()}>{"Victor Madu"}</div>
-                <div className={styles.moneyContainer()}>
-                  <div className={styles.rate()}>{"560.02 NGN"}</div>
-                  <div className={styles.available()}>{"500,000 NGN"}</div>
+                <div className={styles.nameAndRateContainer()}>
+                  <div className={styles.name()}>{"Victor Madu"}</div>
+                  <div className={styles.rate()}>{"560.02"}</div>
                 </div>
-                <button className={styles.buyBtn()}>{trade.buy}</button>
+                <div className={styles.available()}>{"500,000 NGN"}</div>
+                <div className={styles.buyBtnContainer()}>
+                  <button className={styles.buyBtn()}>{trade.buy}</button>
+                </div>
               </div>
             ))}
           </div>

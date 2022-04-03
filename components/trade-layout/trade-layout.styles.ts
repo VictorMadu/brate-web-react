@@ -43,23 +43,6 @@ export const headerIconBtn = () =>
 export const headerIconBtnsContainer = () =>
   classNames("space-x-2", "text-neu-500/90");
 
-export const body = () =>
-  classNames(
-    "mt-3",
-    "shadow-[0px_0px_6px_4px_rgba(0,0,0,0.15)]",
-    "grow",
-    "rounded-lg",
-    "overflow-auto",
-    "flex",
-    "flex-col"
-  );
-
-export const exchangersContainer = () =>
-  classNames("w-full", "overflow-auto", "divide-y", "divide-neu-400/30");
-
-export const exchangerRowBase = () =>
-  classNames("flex", "w-full", "px-4", "py-1", "items-center");
-
 export const currencyList = () =>
   classNames(
     "flex",
@@ -81,6 +64,30 @@ export const currency = () =>
     "border-transparent hover:border-pri-600 focus:border-pri-600"
   );
 
+export const body = () =>
+  classNames(
+    "mt-3",
+    "shadow-[0px_0px_6px_4px_rgba(0,0,0,0.15)]",
+    "grow",
+    "rounded-lg",
+    "overflow-auto",
+    "flex",
+    "flex-col"
+  );
+
+export const exchangersContainer = () =>
+  classNames("w-full", "overflow-auto", "divide-y", "divide-neu-400/30");
+
+export const exchangerRowBase = () =>
+  classNames(
+    "flex",
+    "w-full",
+    "px-4",
+    "py-1",
+    "items-center",
+    "gap-x-[4%] md:gap-x-4"
+  );
+
 export const exchangerHeader = () =>
   classNames(
     exchangerRowBase(),
@@ -90,15 +97,36 @@ export const exchangerHeader = () =>
     "top-0"
   );
 
+export const nameAndRateColBase = () =>
+  classNames("space-y-2", "md:flex", "justify-between", "basis-5/12");
+export const availableColBase = () => classNames("basis-5/12", "text-center");
+export const buyBtnColBase = () => classNames("basis-2/12", "text-right");
+export const nameBase = () => classNames();
+
+export const rateBase = () => classNames();
+
+export const nameAndRateContainerHead = () => classNames(nameAndRateColBase());
+
+export const nameHead = () => classNames(nameBase(), "font-bold");
+
+export const rateHead = () => classNames(rateBase(), "font-semibold");
+
+export const availableHead = () =>
+  classNames("font-semibold", availableColBase());
+
+export const buyBtnHead = () => classNames("font-semibold", buyBtnColBase());
+
 export const exchangerContent = () => classNames(exchangerRowBase(), "py-2");
 
-export const name = () => classNames("font-bold", "grow");
+export const nameAndRateContainer = () => classNames(nameAndRateColBase());
 
-export const moneyContainer = () => classNames("grow", "space-y-1");
+export const name = () => classNames(nameBase(), "font-bold");
+export const rate = () => classNames(rateBase());
 
-export const available = () => classNames("grow");
+export const available = () =>
+  classNames("text-sm", "font-normal", availableColBase());
 
-export const rate = () => classNames("grow");
+export const buyBtnContainer = () => classNames(buyBtnColBase());
 
 export const buyBtn = () =>
   classNames(

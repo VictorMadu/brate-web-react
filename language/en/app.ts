@@ -52,6 +52,7 @@ export const app = {
     trigger_at: "Trigger At",
     copy: "Copy",
     set: "Set",
+    action: "Action",
   },
 };
 
