@@ -126,4 +126,4 @@ export const actionBtn = () =>
     "rounded"
   );
 
-export const actionBtnContainer = () => classNames("mx-auto", "mt-4");
+export const actionBtnContainer = () => classNames("mx-auto", "pt-4");
