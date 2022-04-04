@@ -3,6 +3,8 @@ import Layout from "../layout";
 import map from "lodash/map";
 import range from "lodash/range";
 import * as styles from "./wallet-layout.styles";
+import FundModal from "./fund-modal";
+import WithdrawalModal from "./withdrawal-modal";
 
 const WalletLayout = () => {
   return (
@@ -20,7 +22,7 @@ const WalletLayout = () => {
             </div>
 
             {map(range(0, 30), (id) => (
-              <div className={styles.walletRow()}>
+              <div key={id} className={styles.walletRow()}>
                 <div className={styles.currencyContent()}>
                   <div className={styles.currencyDetail()}>
                     <span className={styles.currencyLong()}>
@@ -38,6 +40,8 @@ const WalletLayout = () => {
             ))}
           </div>
         </div>
+        {/* <FundModal /> */}
+        {/* <WithdrawalModal /> */}
       </div>
     </Layout>
   );
