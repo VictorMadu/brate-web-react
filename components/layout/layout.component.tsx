@@ -8,12 +8,12 @@ const Layout = ({ showNav = true, children }: IProps) => {
   return (
     <div className={styles.container()}>
       <If
-        cond={showNav}
-        Component={
+        deps={[showNav]}
+        Component={() => (
           <div className={styles.navContainer()}>
             <Nav />
           </div>
-        }
+        )}
       />
       <div className={styles.childrenContainer()}>{children}</div>
     </div>
