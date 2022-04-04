@@ -5,6 +5,7 @@ import map from "lodash/map";
 import * as styles from "./profile-settings-layout.styles";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ChangePwdModal from "./change-pwd-modal";
 
 const appLang = app.settings.profile;
 
@@ -30,7 +31,12 @@ const ProfileSettingsLayout = () => {
                 </button>
               </div>
               <div className={styles.textContainer()}>
-                <p className={styles.text()}>{detail.text}</p>
+                <input
+                  className={styles.text()}
+                  value={detail.text}
+                  onChange={() => {}}
+                  disabled={true}
+                />
                 <button className={styles.editBtn(false)}>
                   <FontAwesomeIcon icon={faEdit} size="sm" className={""} />
                 </button>
@@ -38,6 +44,7 @@ const ProfileSettingsLayout = () => {
             </li>
           ))}
         </ul>
+        {/* <ChangePwdModal /> */}
       </div>
     </Layout>
   );

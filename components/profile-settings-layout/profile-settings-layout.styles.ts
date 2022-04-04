@@ -38,7 +38,14 @@ export const title = () =>
 export const textBase = () =>
   classNames("bg-neu-50", "py-2", "px-2", "grow", "rounded-lg");
 
-export const text = () => classNames(textBase());
+export const text = () =>
+  classNames(
+    textBase(),
+    "ring-2",
+    "ring-transparent focus:ring-pri-500",
+    "focus:outline-none",
+    "focus:bg-neu-200/90"
+  );
 
 export const textAndBold = () => classNames(text(), "font-extrabold");
 
