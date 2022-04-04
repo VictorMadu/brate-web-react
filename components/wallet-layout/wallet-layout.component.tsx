@@ -2,44 +2,51 @@ import React from "react";
 import Layout from "../layout";
 import map from "lodash/map";
 import range from "lodash/range";
-import * as styles from "./wallet-layout.styles";
+import app from "../../language/en/app";
 import FundModal from "./fund-modal";
 import WithdrawalModal from "./withdrawal-modal";
+import * as styles from "./wallet-layout.styles";
+
+const tradeText = app.trade;
 
 const WalletLayout = () => {
   return (
     <Layout showNav={true}>
       <div className={styles.container()}>
-        <div className={styles.body()}>
-          <div className={styles.walletTable()}>
-            <div className={styles.walletHeader()}>
-              <div className={styles.walletCurrencyHead()}>
-                <div className={styles.currencyNameHead()}>{"Currency"}</div>
-                <div className={styles.availableHead()}>{"Available"}</div>
-              </div>
+        <div className={styles.tableContainer()}>
+          <table className={styles.table()}>
+            <thead className={styles.head()}>
+              <tr className={styles.rowHead()}>
+                <th className={styles.colHead1()}>{tradeText.currency}</th>
+                <th className={styles.colHead2()}>{tradeText.available}</th>
+                <th className={styles.colHead3()}>{tradeText.action}</th>
+              </tr>
+            </thead>
 
-              <div className={styles.actionHead()}>{"Action"}</div>
-            </div>
-
-            {map(range(0, 30), (id) => (
-              <div key={id} className={styles.walletRow()}>
-                <div className={styles.currencyContent()}>
-                  <div className={styles.currencyDetail()}>
+            <tbody className={styles.body()}>
+              {map(range(0, 30), (id) => (
+                <tr key={id} className={styles.row()}>
+                  <td className={styles.col1()} data-title={tradeText.currency}>
                     <span className={styles.currencyLong()}>
                       {"Nigerian Naira"}
                     </span>
                     <span className={styles.currencyShort()}>{"(NGN)"}</span>
-                  </div>
-                  <div className={styles.available()}>{"500,000"}</div>
-                </div>
-                <div className={styles.action()}>
-                  <button className={styles.actionBtn()}>Fund</button>
-                  <button className={styles.actionBtn()}>Withdrawal</button>
-                  <button className={styles.actionBtn()}>Trade</button>
-                </div>
-              </div>
-            ))}
-          </div>
+                  </td>
+                  <td
+                    className={styles.col2()}
+                    data-title={tradeText.available}
+                  >
+                    {"500,000"}
+                  </td>
+                  <td className={styles.col3()} data-title={tradeText.action}>
+                    <button className={styles.actionBtn()}>Fund</button>
+                    <button className={styles.actionBtn()}>Withdrawal</button>
+                    <button className={styles.actionBtn()}>Trade</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         {/* <FundModal /> */}
         {/* <WithdrawalModal /> */}
