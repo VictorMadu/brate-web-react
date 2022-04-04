@@ -43,6 +43,14 @@ export type Values<T extends Record< string | symbol | number, any>,> = {
 }[keyof T]
 
 
+export type ExcludeTupleNullableElm<T extends any[], U extends any[] = []> = T extends [
+  infer O,
+  ...(infer P)
+]
+  ? ExcludeTupleNullableElm<P, [...U, Exclude<O, null | undefined>]>
+  : U;
+
+
 export type IsInKeys<K extends string | symbol | number, R extends Record< string | symbol | number, any>> = K extends Keys<R> ? K : never;
 
 export type IsInValues<V extends string | symbol | number, R extends Record< string | symbol | number, any>> = V extends Values<R> ? V : never;
