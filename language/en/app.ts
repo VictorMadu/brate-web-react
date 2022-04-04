@@ -53,6 +53,8 @@ export const app = {
     copy: "Copy",
     set: "Set",
     action: "Action",
+    currency: "Currency",
+    available: "Available",
   },
 
   currency: {
