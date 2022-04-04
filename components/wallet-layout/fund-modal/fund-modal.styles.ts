@@ -22,7 +22,13 @@ export const content = () =>
     "px-2"
   );
 export const formContainer = () =>
-  classNames("bg-neu-50", "p-6", "space-y-8", "rounded");
+  classNames(
+    "bg-neu-50",
+    "p-6",
+    "space-y-8",
+    "rounded",
+    "shadow-[0px_0px_6px_rgba(0,0,0,0.4)]"
+  );
 
 export const titleContent = () => classNames("space-x-2");
 
