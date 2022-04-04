@@ -33,8 +33,9 @@ const WalletLayout = () => {
                   <div className={styles.available()}>{"500,000"}</div>
                 </div>
                 <div className={styles.action()}>
-                  <button className={styles.fundBtn()}>Fund</button>
-                  <button className={styles.tradeBtn()}>Trade</button>
+                  <button className={styles.actionBtn()}>Fund</button>
+                  <button className={styles.actionBtn()}>Withdrawal</button>
+                  <button className={styles.actionBtn()}>Trade</button>
                 </div>
               </div>
             ))}

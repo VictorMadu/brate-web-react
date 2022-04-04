@@ -77,9 +77,10 @@ export const currencyShort = () => classNames("text-sm");
 
 export const available = () => classNames();
 
-export const action = () => classNames(actionBase(), "self-start", "space-x-1");
+export const action = () =>
+  classNames(actionBase(), "self-start", "space-x-1", "flex");
 
-export const actionBtnBase = () =>
+export const actionBtn = () =>
   classNames(
     "rounded",
     "px-1.5",
@@ -90,7 +91,3 @@ export const actionBtnBase = () =>
     "border",
     "border-neu-400/30"
   );
-
-export const fundBtn = () => classNames(actionBtnBase());
-
-export const tradeBtn = () => classNames(actionBtnBase());
