@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Component {...pageProps} />
+        <div id="modal-root"></div>
       </PersistGate>
     </Provider>
   );
