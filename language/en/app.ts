@@ -19,6 +19,8 @@ export const app = {
       notification: "Notification",
       display: "Display",
       language: "Language",
+      sign_up: "Register",
+      sign_in: "Login",
       logout: "Logout",
     },
     profile: {
@@ -43,6 +45,10 @@ export const app = {
     display: {
       dark_mode: "Dark Mode",
     },
+    language: {
+      select_language: "Select Language",
+      english: "English",
+    },
   },
   trade: {
     trade: "trade",
@@ -63,5 +69,16 @@ export const app = {
     buy: "Buy",
   },
 };
+
+export const brate = "Brate";
+export const name = "name";
+export const email = "email";
+export const password = "password";
+export const phone = "phone";
+export const sign_up = "sign up";
+export const sign_in = "sign in";
+export const have_an_account_already_quotation_mark =
+  "Have an account already?";
+export const do_not_have_an_account_quotation_mark = "Do not have an account?";
 
 export default app;
