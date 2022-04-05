@@ -30,7 +30,6 @@ export const app = {
       email: "Email",
     },
     notification: {
-      set_removal_text: "Remove notification after",
       time: "Time",
       removal_time: {
         one_hr: "1 hour",
@@ -80,5 +79,19 @@ export const sign_in = "sign in";
 export const have_an_account_already_quotation_mark =
   "Have an account already?";
 export const do_not_have_an_account_quotation_mark = "Do not have an account?";
+export const all = "all";
+export const triggered = "triggered";
+export const untriggered = "untriggered";
+export const filter = "Filter";
+export const price_alerts = "Price Alerts";
+export const trade = "Trade";
+export const fund = "Fund";
+export const remove_price_alert_notification_after =
+  "Remove price alert notification after";
+export const remove_trade_notification_after =
+  "Remove price alert notification after";
+export const remove_wallet_notification_after =
+  "Remove price alert notification after";
+export const search_seller = "Search Seller";
 
 export default app;
