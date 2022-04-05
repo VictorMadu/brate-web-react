@@ -8,7 +8,8 @@ export const container = () =>
     "py-3",
     "h-full",
     "flex",
-    "flex-col"
+    "flex-col",
+    "space-y-4"
   );
 
 export const option = () =>
@@ -46,7 +47,7 @@ export const timeIcon = () =>
   );
 
 export const timeDropdownContainer = () =>
-  classNames("absolute", "right-0", "top-full", "w-[max-content]");
+  classNames("absolute", "right-0", "top-full", "w-[max-content]", "z-20");
 
 export const timeDropdownContent = () =>
   classNames(
