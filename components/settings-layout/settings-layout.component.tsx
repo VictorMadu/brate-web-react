@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import map from "lodash/map";
 import app from "../../language/en/app";
 import Layout from "../layout";
 import * as styles from "./settings-layout.styles";
+import If from "../../core/if";
 
 const texts = [
   app.settings.list.profile,
@@ -15,6 +16,7 @@ const texts = [
 ];
 
 const Settings = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <Layout showNav={true}>
       <div className={styles.container()}>
@@ -32,9 +34,26 @@ const Settings = () => {
             </li>
           ))}
         </ul>
-        <button className={styles.logoutBtn()}>
-          {app.settings.list.logout}
-        </button>
+        <div className={styles.btnContainer()}>
+          <If
+            deps={[isLoggedIn]}
+            Component={() => (
+              <button className={styles.logoutBtn()}>
+                {app.settings.list.logout}
+              </button>
+            )}
+            Else={() => (
+              <>
+                <button className={styles.signInBtn()}>
+                  {app.settings.list.sign_in}
+                </button>
+                <button className={styles.signUpBtn()}>
+                  {app.settings.list.sign_up}
+                </button>
+              </>
+            )}
+          />
+        </div>
       </div>
     </Layout>
   );
