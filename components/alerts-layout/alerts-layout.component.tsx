@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Switch from "../../core/switch";
 import Layout from "../layout";
 import * as styles from "./alerts-layout.styles";
-import app from "../../language/en/app";
+import app, * as text from "../../language/en/app";
 import map from "lodash/map";
 import range from "lodash/range";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AlertsLayout = () => {
   const [switchIsOn, setSwitchIsOn] = useState(true);
@@ -28,9 +30,28 @@ const AlertsLayout = () => {
             isOn={switchIsOn}
           />
         </div>
+        <div className={styles.settingsContainer()}>
+          <div className={styles.dropdownContainer()}>
+            <button className={styles.dropdownBtn()}>
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                size="xs"
+                className={styles.dropdownIcon()}
+              />
+              <span>{text.filter}</span>
+            </button>
+            <div className={styles.dropdownContent()}>
+              <ul className={styles.dropList()}>
+                <li className={styles.dropItem()}>{text.all}</li>
+                <li className={styles.dropItem()}>{text.triggered}</li>
+                <li className={styles.dropItem()}>{text.untriggered}</li>
+              </ul>
+            </div>
+          </div>
 
-        <div className={styles.paginationContainer()}>
-          <span>1</span> - <span>10</span> of <span>100</span>
+          <div className={styles.paginationContainer()}>
+            <span>1</span> - <span>10</span> of <span>100</span>
+          </div>
         </div>
 
         <div className={styles.pricesTable()}>
