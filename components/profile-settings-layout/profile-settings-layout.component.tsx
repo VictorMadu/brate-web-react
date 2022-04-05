@@ -11,7 +11,6 @@ const appLang = app.settings.profile;
 
 const details = [
   { title: appLang.name, text: "Victor Madu" },
-  { title: appLang.name, text: "Victor Madu" },
   { title: appLang.email, text: "ebubevm@gmail.com" },
   { title: appLang.phone, text: "080885864849" },
   { title: appLang.change_pwd, text: ". . . . . . . . . . . . . ." },
