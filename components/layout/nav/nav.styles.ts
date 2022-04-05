@@ -35,6 +35,7 @@ export const navContainer = () =>
       "justify-around",
       "md:gap-x-4",
       "md:flex-col",
+      "md:pl-2",
       "md:pr-8",
       "md:pt-6"
     )
