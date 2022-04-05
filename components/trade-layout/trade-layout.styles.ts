@@ -28,30 +28,23 @@ export const headerBtn = () =>
 
 export const title = () => classNames("font-semibold", "text-lg", "capitalize");
 
-export const headerIconBtn = () =>
+export const dropDownBtn = () =>
   classNames(
-    "transition-all",
-    "ml-auto",
     "transition-all",
     "hover:text-pri-700 focus:text-pri-700",
-    "hover:bg-pri-100 focus:bg-pri-100",
+    "bg-pri-100",
     "h-6",
-    "w-6",
-    "rounded-full"
+    "basis-6",
+    "shrink-0",
+    "rounded",
+    "text-center"
   );
 
-export const headerIconBtnsContainer = () =>
-  classNames("space-x-2", "text-neu-500/90");
+export const currencyListContainer = () =>
+  classNames("flex", "items-center", "mb-2", "mt-4", "gap-x-2");
 
 export const currencyList = () =>
-  classNames(
-    "flex",
-    "border-b",
-    "border-neu-400/30",
-    "mb-2",
-    "mt-1",
-    "overflow-auto"
-  );
+  classNames("flex", "border-b", "border-neu-400/30", "overflow-auto");
 
 export const currency = () =>
   classNames(
@@ -139,4 +132,34 @@ export const buyBtn = () =>
     "font-semibold",
     "hover:bg-pri-100/80 focus:bg-pri-100/80",
     "hover:text-pri-600/90 focus:text-pri-600/90"
+  );
+
+// search container
+export const searchContainer = () =>
+  classNames("relative", "rounded-2xl", "overflow-hidden");
+
+export const searchInput = () =>
+  classNames(
+    "transition-all",
+    "duration-1000",
+    "peer",
+    "bg-neu-300 focus:bg-pri-100",
+    "shadow-inner",
+    "pl-3",
+    "pr-10",
+    "py-1",
+    "focus:outline-none",
+    "w-12 focus:w-52"
+  );
+export const searchBtn = () =>
+  classNames(
+    "absolute",
+    "bg-pri-700/90",
+    "text-neu-50",
+    "right-1 peer-focus:right-2",
+    "top-1/2",
+    "-translate-y-1/2",
+    "w-6",
+    "h-6",
+    "rounded-full"
   );
