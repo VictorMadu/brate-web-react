@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../layout";
 import map from "lodash/map";
 import range from "lodash/range";
-import app from "../../language/en/app";
+import app, * as text from "../../language/en/app";
 import FundModal from "./fund-modal";
 import WithdrawalModal from "./withdrawal-modal";
 import * as styles from "./wallet-layout.styles";
@@ -39,9 +39,11 @@ const WalletLayout = () => {
                     {"500,000"}
                   </td>
                   <td className={styles.col3()} data-title={tradeText.action}>
-                    <button className={styles.actionBtn()}>Fund</button>
-                    <button className={styles.actionBtn()}>Withdrawal</button>
-                    <button className={styles.actionBtn()}>Trade</button>
+                    <button className={styles.actionBtn()}>{text.fund}</button>
+                    <button className={styles.actionBtn()}>
+                      {text.withdrawal}
+                    </button>
+                    <button className={styles.actionBtn()}>{text.trade}</button>
                   </td>
                 </tr>
               ))}
