@@ -61,15 +61,27 @@ export const app = {
     currency: "Currency",
     available: "Available",
   },
-
-  currency: {
-    convert: "Convert",
-    set_alert: "Set Alert",
-    buy: "Buy",
-  },
 };
 
+// TODO: arrange in alphabetically order
+// TODO: Enforce lowercase if possible
+export const action = "Action";
+export const add = "add";
+export const available = "Available";
+export const base = "base";
 export const brate = "Brate";
+export const currency = "Currency";
+export const _delete = "delete";
+export const edit = "edit";
+export const fund = "fund";
+export const quota = "quota";
+export const rate = "rate";
+export const trade = "trade";
+export const withdrawal = "withdrawal";
+export const you_give = "you give";
+export const you_receive = "you receive";
+export const your_rate = "your rate";
+
 export const name = "name";
 export const email = "email";
 export const password = "password";
@@ -84,8 +96,6 @@ export const triggered = "triggered";
 export const untriggered = "untriggered";
 export const filter = "Filter";
 export const price_alerts = "Price Alerts";
-export const trade = "Trade";
-export const fund = "Fund";
 export const remove_price_alert_notification_after =
   "Remove price alert notification after";
 export const remove_trade_notification_after =
@@ -93,5 +103,15 @@ export const remove_trade_notification_after =
 export const remove_wallet_notification_after =
   "Remove price alert notification after";
 export const search_seller = "Search Seller";
-
+export const account = "Account";
+export const switch_to_bereau_de_change = "Switch to Bereau de Change";
+export const sell = "Sell";
+export const convert = "Convert";
+export const set_alert = "Set Alert";
+export const buy = "Buy";
+export const parallel = "Parallel";
+export const black = "Parallel";
+export const copy = "Copy";
+export const trigger_at = "Trigger At";
+export const set = "set";
 export default app;
