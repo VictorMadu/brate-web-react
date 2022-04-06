@@ -8,37 +8,44 @@ export const container = () =>
     "top-0",
     "left-0",
     "bg-neu-900/40",
-    "text-neu-700/90"
+    "text-neu-700/90",
+    "flex",
+    "items-center",
+    "justify-center"
   );
 
 export const content = () =>
   classNames(
-    "w-full",
-    "h-full",
-    "flex",
-    "justify-center",
-    "items-center",
     "text-center",
-    "px-2"
-  );
-export const formContainer = () =>
-  classNames(
     "bg-neu-50",
-    "p-6",
     "space-y-8",
     "rounded",
-    "shadow-[0px_0px_6px_rgba(0,0,0,0.4)]"
+    "overflow-hidden",
+    "shadow-[0px_0px_8px_3px_rgba(0,0,0,0.4)]"
   );
 
-export const titleContent = () => classNames("space-x-2");
+export const padding = () => classNames("px-4", "py-1.5");
+
+export const headerAndFooterBase = () =>
+  classNames(padding(), "bg-pri-600", "text-pri-50");
+
+export const header = () => classNames(headerAndFooterBase(), "space-x-2");
 
 export const currencyFullName = () =>
-  classNames("font-bold", "text-xl", "text-pri-800/90", "tracking-tight");
+  classNames("font-bold", "text-xl", "tracking-tight");
 
-export const currencyShortName = () => classNames("text-sm", "text-neu-700/90");
+export const currencyShortName = () => classNames("text-sm");
+
+export const formContainer = () => classNames(padding());
 
 export const inputGroup = () =>
-  classNames("flex", "justify-between", "items-center", "gap-x-2", "py-1");
+  classNames(
+    "flex",
+    "justify-between",
+    "items-center",
+    "gap-x-[2%] md:gap-x-2 lg:gap-x-8",
+    "py-1"
+  );
 
 export const inputLabel = () => classNames("text-left");
 
@@ -58,18 +65,22 @@ export const EditableInput = () =>
     "text-neu-900"
   );
 
-export const actionBtnContainer = () =>
-  classNames("flex", "justify-end", "gap-x-2");
+export const footer = () =>
+  classNames(headerAndFooterBase(), "flex", "justify-end", "gap-x-2");
 
 export const btnBase = () =>
   classNames("font-semibold", "rounded", "px-2", "py-1", "transition-all");
 
 export const cancelBtn = () =>
-  classNames(btnBase(), "hover:text-pri-900/90 focus:text-pri-900/90");
+  classNames(
+    btnBase(),
+    "hover:text-pri-200 focus:text-pri-200",
+    "hover:underline"
+  );
 
 export const continueBtn = () =>
   classNames(
     btnBase(),
-    "bg-neu-200/90 hover:bg-pri-200/90 focus:bg-pri-200/90",
-    "shadow-[0px_0px_3px_1px_rgba(0,0,0,0.1)] hover:shadow-none focus:shadow-none"
+    "bg-pri-50/10 hover:bg-pri-500/70 focus:bg-pri-500/70",
+    "shadow-[0px_0px_4px_2px_rgba(0,0,0,0.1)] hover:shadow-inner focus:shadow-inner"
   );
