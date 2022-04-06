@@ -32,6 +32,7 @@ export const navContainer = () =>
       "grow",
       "md:grow-0",
       "flex",
+      "overflow-x-auto",
       "justify-around",
       "md:gap-x-4",
       "md:flex-col",

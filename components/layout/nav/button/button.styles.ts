@@ -16,7 +16,8 @@ export const container = () =>
     "md:font-bold"
   );
 
-export const text = () => classNames("text-neu-50/60 md:text-neu-50/90");
+export const text = () =>
+  classNames("text-neu-50/60 md:text-neu-50/90", "lg:text-base");
 
 export const icon = () =>
   classNames("text-neu-50/90 md:text-neu-50/60", "text-base");
