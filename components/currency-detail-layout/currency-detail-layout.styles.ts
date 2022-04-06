@@ -18,7 +18,7 @@ export const currencyPairContainer = () =>
 
 export const currency = (isBase: boolean) =>
   classNames(
-    "md:inline-block",
+    "lg:inline-block",
     "font-semibold",
     "text-xl",
     "before:content-[attr(data-short)] before:hidden before:mr-1.5 before:text-base before:font-normal",

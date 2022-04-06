@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Switch from "../../core/switch";
 import Layout from "../layout";
-import app from "../../language/en/app";
+import * as text from "../../language/en/app";
 import * as styles from "./currency-detail-layout.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,18 +10,18 @@ import {
   faChevronDown,
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
-
-const text = app.currency;
+import If from "../../core/if";
 
 const CurrencyDetailLayout = () => {
+  const [isBereauDeChange, setIsBereauDeChange] = useState(true);
   const [switchIsOn, setSwitchIsOn] = useState(true);
   return (
     <Layout showNav={true}>
       <div className={styles.container()}>
         <div className={styles.switchContainer()}>
           <Switch
-            onText={app.market_type.parallel}
-            offText={app.market_type.black}
+            onText={text.parallel}
+            offText={text.black}
             onClick={(isOn) => {
               setSwitchIsOn(isOn);
             }}
@@ -44,7 +44,13 @@ const CurrencyDetailLayout = () => {
         <div className={styles.btnGroup()}>
           <button className={styles.btn()}>{text.convert}</button>
           <button className={styles.btn()}>{text.set_alert}</button>
-          <button className={styles.btn()}>{text.buy}</button>
+          <button className={styles.btn()}>
+            <If
+              deps={[isBereauDeChange]}
+              Component={() => <>{text.sell}</>}
+              Else={() => <>{text.buy}</>}
+            />
+          </button>
         </div>
         <div className={styles.currencyContainer()}>
           <div className={styles.currencyContent()}>
@@ -84,14 +90,14 @@ const CurrencyDetailLayout = () => {
             />
           </div>
           <div className={styles.actionBtnContainer()}>
-            <button className={styles.actionBtn()}>{app.trade.copy}</button>
+            <button className={styles.actionBtn()}>{text.copy}</button>
           </div>
         </div>
         <div className={styles.currencyContainer()}>
           <div className={styles.currencyContent()}>
             {/* Use uuid to generate id and htmlFor */}
             <label htmlFor="base" className={styles.currencyAbbrevLabel()}>
-              {app.trade.trigger_at}
+              {text.trigger_at}
             </label>
             <input
               id="base"
@@ -102,7 +108,7 @@ const CurrencyDetailLayout = () => {
             />
           </div>
           <div className={styles.actionBtnContainer()}>
-            <button className={styles.actionBtn()}>{app.trade.set}</button>
+            <button className={styles.actionBtn()}>{text.set}</button>
           </div>
         </div>
       </div>
