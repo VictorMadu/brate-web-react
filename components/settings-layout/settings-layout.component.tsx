@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import map from "lodash/map";
-import app from "../../language/en/app";
+import app, * as text from "../../language/en/app";
 import Layout from "../layout";
 import * as styles from "./settings-layout.styles";
 import If from "../../core/if";
@@ -12,6 +12,7 @@ const texts = [
   app.settings.list.wallet,
   app.settings.list.notification,
   app.settings.list.display,
+  text.account,
   app.settings.list.language,
 ];
 
@@ -21,8 +22,6 @@ const Settings = () => {
     <Layout showNav={true}>
       <div className={styles.container()}>
         <ul className={styles.settingsList()}>
-          {/* TODO: Add modal for edit profile detail, add wallet layout, add language layout, add page title headings
-           */}
           {map(texts, (text) => (
             <li key={text} className={styles.settingsItem()}>
               <p className={styles.settingsText()}>{text}</p>

@@ -15,7 +15,14 @@ export const settingsList = () =>
   classNames("mt-12", "mx-auto", "w-full", "divide-y", "divide-neu-400/30");
 
 export const settingsItem = () =>
-  classNames("flex", "justify-between", "items-center", "px-1", "py-2.5");
+  classNames(
+    "flex",
+    "justify-between",
+    "items-center",
+    "px-1",
+    "py-2.5",
+    "cursor-pointer"
+  );
 
 export const settingsText = () => classNames();
 
