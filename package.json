@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "brate",
   "private": true,
   "scripts": {
     "dev": "next dev",
