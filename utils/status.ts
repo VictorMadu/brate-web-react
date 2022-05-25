@@ -1,0 +1,18 @@
+export enum HttpError {
+  NO_TOKEN,
+  APP_TIMEOUT,
+  SERVER_TIMEOUT,
+  SERVER_REQUEST,
+  APP_REQUEST,
+  AUTHENTICATION,
+  AUTHORIZATION,
+  SERVER_ISSUE,
+  SERVER_UNKNOWN,
+  UNKNOWN,
+}
+
+export enum DataFetching {
+  SUCCESS,
+  FETCHING,
+  FAILED,
+}
