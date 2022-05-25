@@ -84,3 +84,8 @@ export const continueBtn = () =>
     "bg-pri-50/10 hover:bg-pri-500/70 focus:bg-pri-500/70",
     "shadow-[0px_0px_4px_2px_rgba(0,0,0,0.1)] hover:shadow-inner focus:shadow-inner"
   );
+
+export const dropContent = () =>
+  classNames("flex", "gap-x-2", "items-center", "cursor-pointer", "relative");
+
+export const icon = () => classNames("text-neu-700/70");

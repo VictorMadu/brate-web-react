@@ -1,51 +1,29 @@
 import React from "react";
 import app from "../../language/en/app";
-import Layout from "../layout";
-import map from "lodash/map";
-import * as styles from "./profile-settings-layout.styles";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ChangePwdModal from "./change-pwd-modal";
+import PageBackBtn from "../../core/page-back-btn";
+import ProfileInfoItem from "./profile-info-item";
+import PwdInfoItem from "./pwd-profile-info-item";
+import * as styles from "./profile-settings-layout.styles";
 
 const appLang = app.settings.profile;
 
-const details = [
-  { title: appLang.name, text: "Victor Madu" },
-  { title: appLang.email, text: "ebubevm@gmail.com" },
-  { title: appLang.phone, text: "080885864849" },
-  { title: appLang.change_pwd, text: ". . . . . . . . . . . . . ." },
-];
+// TODO: All text should be passed to the Text Component. For support of multiple language. Every lanugage text should implement a given interface (or maybe something better) with text keys(written in English) which the object key will be used to obtain the real text. For dynmaic text eg: text coming from the server, there should be an indication that we should use like that. Check the state manager for it
 
 const ProfileSettingsLayout = () => {
   return (
-    <Layout showNav={true}>
-      <div className={styles.container()}>
-        <ul className={styles.list()}>
-          {map(details, (detail) => (
-            <li key={detail.title} className={styles.item()}>
-              <div className={styles.titleContainer()}>
-                <p className={styles.title()}>{detail.title}</p>
-                <button className={styles.editBtn(true)}>
-                  <FontAwesomeIcon icon={faEdit} size="sm" className={""} />
-                </button>
-              </div>
-              <div className={styles.textContainer()}>
-                <input
-                  className={styles.text()}
-                  value={detail.text}
-                  onChange={() => {}}
-                  disabled={true}
-                />
-                <button className={styles.editBtn(false)}>
-                  <FontAwesomeIcon icon={faEdit} size="sm" className={""} />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-        {/* <ChangePwdModal /> */}
-      </div>
-    </Layout>
+    <div className={styles.container()}>
+      <PageBackBtn route="/settings" />
+      {/* TODO: Show loader when profileInfo is being changed or maybe just like. Rather show a toaster when successfully or not. So that user can focus on other things */}
+      <ul className={styles.list()}>
+        <ProfileInfoItem userDataKey="name" />
+        <ProfileInfoItem userDataKey="email" />
+        <ProfileInfoItem userDataKey="phone" />
+        {/* TODO: Add the changing and forgot password feature  */}
+        <PwdInfoItem />
+      </ul>
+      <ChangePwdModal />
+    </div>
   );
 };
 

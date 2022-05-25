@@ -5,6 +5,7 @@ export const container = () =>
     "w-full",
     "px-[4%]",
     "md:px-[10%]",
+    "mt-3",
     "py-3",
     "h-full",
     "flex",

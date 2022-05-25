@@ -44,9 +44,9 @@ export const textInput = () => classNames(inputBase(), "");
 
 export const pwdInput = () => classNames(inputBase(), "");
 
-export const linkContainer = () => classNames("text-right", "mt-2");
+export const linkContainer = () => classNames("flex", "space-between", "mt-2");
 
-export const link = () =>
+const link = () =>
   classNames(
     "transition-color",
     "duration-500",
@@ -55,6 +55,9 @@ export const link = () =>
     "hover:underline focus:underline",
     "cursor-pointer"
   );
+
+export const signInLink = () => classNames(link(), "ml-auto");
+export const modalLink = () => classNames(link(), "mr-auto");
 
 export const btnContainer = () => classNames("text-center");
 

@@ -2,58 +2,67 @@ import React from "react";
 import Layout from "../layout";
 import map from "lodash/map";
 import range from "lodash/range";
+import Table from "../../core/table/three-col-table";
+import Text from "../../core/text";
 import app, * as text from "../../language/en/app";
 import FundModal from "./fund-modal";
 import WithdrawalModal from "./withdrawal-modal";
 import * as styles from "./wallet-layout.styles";
+import TableHeadText from "./table-head-text";
+import CurrencyText from "./currency-text";
+import AmountAvailable from "./amount-available";
+import ActionBtns from "./action-btns";
+import OptionsSection from "./options-section";
+import WalletModal from "./wallet-modal";
+import { useWalletLayout } from "./hook";
 
 const tradeText = app.trade;
 
 const WalletLayout = () => {
-  return (
-    <Layout showNav={true}>
-      <div className={styles.container()}>
-        <div className={styles.tableContainer()}>
-          <table className={styles.table()}>
-            <thead className={styles.head()}>
-              <tr className={styles.rowHead()}>
-                <th className={styles.colHead1()}>{tradeText.currency}</th>
-                <th className={styles.colHead2()}>{tradeText.available}</th>
-                <th className={styles.colHead3()}>{tradeText.action}</th>
-              </tr>
-            </thead>
+  const { neededWallets } = useWalletLayout();
 
-            <tbody className={styles.body()}>
-              {map(range(0, 30), (id) => (
-                <tr key={id} className={styles.row()}>
-                  <td className={styles.col1()} data-title={tradeText.currency}>
-                    <span className={styles.currencyLong()}>
-                      {"Nigerian Naira"}
-                    </span>
-                    <span className={styles.currencyShort()}>{"(NGN)"}</span>
-                  </td>
-                  <td
-                    className={styles.col2()}
-                    data-title={tradeText.available}
-                  >
-                    {"500,000"}
-                  </td>
-                  <td className={styles.col3()} data-title={tradeText.action}>
-                    <button className={styles.actionBtn()}>{text.fund}</button>
-                    <button className={styles.actionBtn()}>
-                      {text.withdrawal}
-                    </button>
-                    <button className={styles.actionBtn()}>{text.trade}</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        {/* <FundModal /> */}
-        {/* <WithdrawalModal /> */}
-      </div>
-    </Layout>
+  return (
+    <div className={styles.container()}>
+      <OptionsSection />
+      <Table>
+        <Table.Head>
+          <Table.HeadRow>
+            <Table.HeadCol colNo={1}>
+              <TableHeadText text={tradeText.currency} />
+            </Table.HeadCol>
+
+            <Table.HeadCol colNo={2}>
+              <TableHeadText text={tradeText.available} />
+            </Table.HeadCol>
+
+            <Table.HeadCol colNo={3}>
+              <TableHeadText text={tradeText.action} />
+            </Table.HeadCol>
+          </Table.HeadRow>
+        </Table.Head>
+        <Table.Body>
+          {map(neededWallets, (walletInfo) => (
+            <Table.BodyRow key={walletInfo.currency}>
+              <Table.BodyCol dataTitle={tradeText.currency} colNo={1}>
+                <CurrencyText walletInfo={walletInfo} />
+              </Table.BodyCol>
+
+              <Table.BodyCol dataTitle={tradeText.available} colNo={2}>
+                <AmountAvailable walletInfo={walletInfo} />
+              </Table.BodyCol>
+
+              <Table.BodyCol dataTitle={tradeText.action} colNo={3}>
+                <ActionBtns walletInfo={walletInfo} />
+              </Table.BodyCol>
+            </Table.BodyRow>
+          ))}
+        </Table.Body>
+      </Table>
+      <WalletModal modal="withdrawalModal" />
+      <WalletModal modal="fundModal" />
+      {/* <FundModal /> */}
+      {/* <WithdrawalModal /> */}
+    </div>
   );
 };
 

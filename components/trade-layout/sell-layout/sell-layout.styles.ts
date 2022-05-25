@@ -3,7 +3,8 @@ import classNames from "classnames";
 export const container = () =>
   classNames("w-full", "px-[4%]", "py-3", "h-full", "flex", "flex-col");
 
-export const addBtnContainer = () => classNames("text-right");
+export const settings = () =>
+  classNames("flex", "justify-between", "items-center");
 
 export const addBtn = () =>
   classNames(

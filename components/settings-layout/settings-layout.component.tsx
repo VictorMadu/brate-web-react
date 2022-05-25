@@ -3,58 +3,48 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import map from "lodash/map";
 import app, * as text from "../../language/en/app";
-import Layout from "../layout";
 import * as styles from "./settings-layout.styles";
 import If from "../../core/if";
+import LogoutBtn from "./logout-btn";
+import AuthBtns from "./auth-btns";
+import SetttingOption from "./settting-option";
+import { useSubscribeWithTransform } from "../../hooks";
+import { authStateMgr } from "../../use-case/auth/state-manager";
+import { isAuthTransform } from "../../use-case/auth/transformers";
+
+type Text = string;
+type Route = string;
 
 const texts = [
-  app.settings.list.profile,
-  app.settings.list.wallet,
-  app.settings.list.notification,
-  app.settings.list.display,
-  text.account,
-  app.settings.list.language,
-];
+  [app.settings.list.profile, "profile"],
+  [app.settings.list.wallet, "wallet"],
+  [app.settings.list.notification, "notification"],
+  [app.settings.list.display, "display"],
+  [text.account, "account"],
+  [app.settings.list.language, "language"],
+] as [Text, Route][];
 
 const Settings = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isAuth = useSubscribeWithTransform(
+    authStateMgr,
+    "token",
+    isAuthTransform
+  );
   return (
-    <Layout showNav={true}>
-      <div className={styles.container()}>
-        <ul className={styles.settingsList()}>
-          {map(texts, (text) => (
-            <li key={text} className={styles.settingsItem()}>
-              <p className={styles.settingsText()}>{text}</p>
-              <FontAwesomeIcon
-                icon={faChevronRight}
-                size="xs"
-                className={styles.settingsIcon()}
-              />
-            </li>
-          ))}
-        </ul>
-        <div className={styles.btnContainer()}>
-          <If
-            deps={[isLoggedIn]}
-            Component={() => (
-              <button className={styles.logoutBtn()}>
-                {app.settings.list.logout}
-              </button>
-            )}
-            Else={() => (
-              <>
-                <button className={styles.signInBtn()}>
-                  {app.settings.list.sign_in}
-                </button>
-                <button className={styles.signUpBtn()}>
-                  {app.settings.list.sign_up}
-                </button>
-              </>
-            )}
+    <div className={styles.container()}>
+      <ul className={styles.settingsList()}>
+        {map(texts, ([text, route]) => (
+          <SetttingOption
+            key={route}
+            text={text}
+            route={"/settings/" + route}
           />
-        </div>
+        ))}
+      </ul>
+      <div className={styles.btnContainer()}>
+        <If deps={[isAuth]} Component={LogoutBtn} Else={AuthBtns} />
       </div>
-    </Layout>
+    </div>
   );
 };
 

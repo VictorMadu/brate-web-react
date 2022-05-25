@@ -21,4 +21,4 @@ export const titleInAuthContainer = () =>
   classNames(titleBase(), "text-neu-900/90", "self-start", "md:hidden");
 
 export const leftContainer = () =>
-  classNames("bg-pri-700", "basis:0 md:basis-1/2");
+  classNames("bg-pri-700", "basis:0 md:basis-1/2", "cursor-pointer");

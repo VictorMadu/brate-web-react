@@ -1,96 +1,33 @@
 import React from "react";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import app, * as text from "../../language/en/app";
-import * as styles from "./settings-notification-layout.styles";
-import Layout from "../layout";
-
-const appLng = app.settings.notification.removal_time;
+import * as text from "../../language/en/app";
+import Lists from "../../core/lists";
+import ListItem from "./list-item";
+import {
+  updateDeleteFundNotificationAfter,
+  updateDeletePriceAlertNotificationAfter,
+  updateDeleteTradeNotificationAfter,
+} from "../../use-case/auth/actions/update-web-user-data";
 
 const SettingsNotificationLayout = () => {
   return (
-    <Layout showNav={true}>
-      <div className={styles.container()}>
-        <div className={styles.option()}>
-          <p>{text.remove_price_alert_notification_after}</p>
-          <div className={styles.timeContainer()}>
-            <button className={styles.timeContentBtn()}>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                size="xs"
-                className={styles.timeIcon()}
-              />
-              <span>{app.settings.notification.time}</span>
-            </button>
-            <div className={styles.timeDropdownContainer()}>
-              <ul className={styles.timeDropdownContent()}>
-                <li className={styles.timeDropdownItem()}>{appLng.one_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.three_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.six_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_day}</li>
-                <li className={styles.timeDropdownItem()}>
-                  {appLng.three_day}
-                </li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_wk}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_mth}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className={styles.option()}>
-          <p>{text.remove_trade_notification_after}</p>
-          <div className={styles.timeContainer()}>
-            <button className={styles.timeContentBtn()}>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                size="xs"
-                className={styles.timeIcon()}
-              />
-              <span>{app.settings.notification.time}</span>
-            </button>
-            <div className={styles.timeDropdownContainer()}>
-              <ul className={styles.timeDropdownContent()}>
-                <li className={styles.timeDropdownItem()}>{appLng.one_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.three_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.six_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_day}</li>
-                <li className={styles.timeDropdownItem()}>
-                  {appLng.three_day}
-                </li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_wk}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_mth}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className={styles.option()}>
-          <p>{text.remove_wallet_notification_after}</p>
-          <div className={styles.timeContainer()}>
-            <button className={styles.timeContentBtn()}>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                size="xs"
-                className={styles.timeIcon()}
-              />
-              <span>{app.settings.notification.time}</span>
-            </button>
-            <div className={styles.timeDropdownContainer()}>
-              <ul className={styles.timeDropdownContent()}>
-                <li className={styles.timeDropdownItem()}>{appLng.one_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.three_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.six_hr}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_day}</li>
-                <li className={styles.timeDropdownItem()}>
-                  {appLng.three_day}
-                </li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_wk}</li>
-                <li className={styles.timeDropdownItem()}>{appLng.one_mth}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Layout>
+    <>
+      <section>
+        <Lists>
+          <ListItem
+            text={text.remove_price_alert_notification_after}
+            onSelect={updateDeletePriceAlertNotificationAfter}
+          />
+          <ListItem
+            text={text.remove_trade_notification_after}
+            onSelect={updateDeleteTradeNotificationAfter}
+          />
+          <ListItem
+            text={text.remove_wallet_notification_after}
+            onSelect={updateDeleteFundNotificationAfter}
+          />
+        </Lists>
+      </section>
+    </>
   );
 };
 
