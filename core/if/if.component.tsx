@@ -1,16 +1,16 @@
 import every from "lodash/every";
-import { ExcludeTupleNullableElm } from "../../types";
 import { IProps } from "./if.interface";
+import { ExcludeFromTuple } from "ts-util-types";
 
-const If = <T extends any[] = any[]>(props: IProps<T>) => {
-  const Component = props.Component;
-  const Else = props.Else;
-  const allTruthish = every(props.deps, (dep) => dep);
-  return allTruthish ? (
-    <Component deps={(props.deps as unknown) as ExcludeTupleNullableElm<T>} />
-  ) : Else ? (
-    <Else />
-  ) : null;
+const If = <T extends any[]>({ deps, Component, Else }: IProps<T>) => {
+  const ElseComponent = Else ?? (() => null);
+  return every(deps, (dep) => dep) ? (
+    <Component
+      deps={(deps as any) as ExcludeFromTuple<T, undefined | null | false | 0>}
+    />
+  ) : (
+    <ElseComponent />
+  );
 };
 
 export default If;
