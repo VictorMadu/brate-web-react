@@ -11,6 +11,7 @@ export const app = {
   type_type: {
     all: "All",
     favourite: "Favourite",
+    not_favourite: "Not Favourite",
   },
   settings: {
     list: {
@@ -70,13 +71,22 @@ export const add = "add";
 export const available = "Available";
 export const base = "base";
 export const brate = "Brate";
+export const cancel = "Cancel";
 export const currency = "Currency";
 export const _delete = "delete";
 export const edit = "edit";
+export const email_verification = "Email Verification";
+export const enter_one_time_password_sent_to_your_email =
+  "Enter one time password sent to your email";
+export const enter_your_otp = "Enter your OTP";
+export const fetching_data = "Fetching Data";
+export const fetching_failed = "Fetching Failed";
+export const fetching_successfully = "Fetching Successfully";
 export const fund = "fund";
 export const quota = "quota";
 export const rate = "rate";
 export const trade = "trade";
+export const verify_email = "verify email";
 export const withdrawal = "withdrawal";
 export const you_give = "you give";
 export const you_receive = "you receive";
@@ -99,10 +109,12 @@ export const price_alerts = "Price Alerts";
 export const remove_price_alert_notification_after =
   "Remove price alert notification after";
 export const remove_trade_notification_after =
-  "Remove price alert notification after";
+  "Remove Trade notification after";
 export const remove_wallet_notification_after =
-  "Remove price alert notification after";
+  "Remove Wallet notification after";
 export const search_seller = "Search Seller";
+export const send = "Send";
+
 export const account = "Account";
 export const switch_to_bereau_de_change = "Switch to Bereau de Change";
 export const sell = "Sell";
